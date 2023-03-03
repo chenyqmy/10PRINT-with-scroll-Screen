@@ -13,15 +13,15 @@ def draw_line(x, y, size):
     else:
         canvas.create_line(x, y+size, x+size, y)
     time.sleep(0.005)
+    
 size = 20
 y_offset = 0
+x, y = 0, 0
 
 for y in range(0, 600, size):
     for x in range(0, 600, size):
         draw_line(x, y, size)
-        canvas.update()
-        print(x,y)
-        
+        canvas.update()        
 
 if x == 580 and y == 580:
     canvas.move("all",0,-size)
@@ -30,6 +30,5 @@ if x == 580 and y == 580:
             draw_line(x, 580, size)
             canvas.update()
         canvas.move("all",0,-size)
-
 
 root.mainloop()
